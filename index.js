@@ -1,5 +1,5 @@
-import glob from 'glob'
-import path from 'path'
+import glob from 'node:glob'
+import path from 'node:path'
 
 export function defaultConversionFunction(filePath) {
   return (

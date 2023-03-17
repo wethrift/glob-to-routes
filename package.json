@@ -2,7 +2,12 @@
   "name": "glob-to-routes",
   "version": "1.0.0",
   "description": "A simple utility for converting globs to route paths to be used with your routing system",
-  "main": "index.js",
+  "exports": "./index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=14.16"
+  },
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
