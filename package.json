@@ -1,6 +1,6 @@
 {
   "name": "glob-to-routes",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple utility for converting globs to route paths to be used with your routing system",
   "exports": "./index.js",
   "type": "module",
@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/wethrift/glob-to-routes/issues"
   },
-  "homepage": "https://github.com/wethrift/glob-to-routes#readme"
+  "homepage": "https://github.com/wethrift/glob-to-routes#readme",
+  "dependencies": {
+    "glob": "^9.3.0"
+  }
 }
