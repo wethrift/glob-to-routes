@@ -1,5 +1,5 @@
 import path from 'node:path'
-import glob from 'glob'
+import { glob } from 'glob'
 
 export function defaultConversionFunction(filePath) {
   return (
@@ -13,18 +13,9 @@ export default async function filesToRoutes(
   conversionFunc = defaultConversionFunction
 ) {
   const dir = path.resolve(process.cwd(), baseDir)
-  return new Promise((resolve, reject) => {
-    glob(globPath, { cwd: dir }, (err, files) => {
-      if (err) {
-        reject(err)
-      } else {
-        resolve(
-          files.map(filePath => ({
-            route: conversionFunc(filePath),
-            filePath: path.resolve(dir, filePath),
-          }))
-        )
-      }
-    })
-  })
+  const files = await glob(globPath, { cwd: dir })
+  return files.map(filePath => ({
+    route: conversionFunc(filePath),
+    filePath: path.resolve(dir, filePath),
+  }))
 }
